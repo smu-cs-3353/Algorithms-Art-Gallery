@@ -1,20 +1,22 @@
-name: F21-PA01-Art-Gallery
+name: 21f-01-art-gallery
 
 on: [push]
 
 env:
-  EXE_NAME: The Art Gallery
-  ###   List input files in the order that they need to appear in Argv param of main.
+  EXE_NAME: art_gallery
+  ###   List them in the order that they need to appear in Argv param of main.
   ###   Output Files will follow input files
   ###   Note: These should be the actual names of the files.  No double quotes
-  INPUT_FILES: input01.txt
-  OUTPUT_FILES: output01.txt
+  INPUT_FILES: input.txt
+  OUTPUT_FILES: output.txt
+
+### DO NOT MODIFY ANYTHING BELOW THIS LINE!!!
 
 jobs:
   build:
     name: Project_Building
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 3
 
     steps:
 
@@ -73,3 +75,4 @@ jobs:
           name: project_output
           path: ${{runner.workspace}}/build/artifacts
       
+
