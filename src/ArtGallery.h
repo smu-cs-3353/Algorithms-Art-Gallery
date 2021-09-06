@@ -16,6 +16,8 @@ public:
     ArtGallery();
     ArtGallery(std::string);
 
+    void displayAllPaintings();
+
 };
 
 

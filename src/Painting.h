@@ -4,7 +4,7 @@
 
 #ifndef INC_21F_PA01_MILLER_AND_SCHMITT_PAINTING_H
 #define INC_21F_PA01_MILLER_AND_SCHMITT_PAINTING_H
-
+#include <iostream>
 
 class Painting {
 private:
@@ -15,6 +15,8 @@ private:
 public:
     Painting();
     Painting(int id, int value, int width, int height);
+
+    void display();
 
     int getID();
     int getValue();
