@@ -9,3 +9,4 @@ int main( int argc, char *argv[] ){
     ArtGallery gallery(inputFileName);
     gallery.displayAllPaintings();
 }
+
