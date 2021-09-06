@@ -11,18 +11,21 @@ using namespace std;
 class Wall {
 
 public:
-    void createWall(ifstream &inFile);
+    Wall();
+    Wall(int inWidth, int inHeight);
     void printDimensions();
+
+    void setWidth(int inWidth);
+    void setHeight(int inHeight);
+
+    int getWidth() { return mWidth; }
+    int getHeight() { return mHeight; }
 
 private:
     int mWidth;
-    int mLength;
+    int mHeight;
 
-    void setLength(int inLength);
-    void setWidth(int inWidth);
 
-    int getLength() { return mLength; }
-    int getWidth() { return mWidth; }
 };
 
 

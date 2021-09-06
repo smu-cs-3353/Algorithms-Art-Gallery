@@ -23,6 +23,10 @@ ArtGallery::ArtGallery(std::string inputFileName) {
         std::cout << "Wall dimensions: " << wallWidth << "x" << wallHeight << std::endl;
         std::cout << "Receiving " << numPaintings << " paintings." << std::endl;
 
+        //sets the attributes of our wall object
+        wall.setHeight(wallHeight);
+        wall.setWidth(wallWidth);
+
         //reading in individual painting attributes
         while (!inputFile.eof()) {
             int id, value, width, height;

@@ -8,5 +8,6 @@ int main( int argc, char *argv[] ){
     string inputFileName(argv[1]);
     ArtGallery gallery(inputFileName);
     gallery.displayAllPaintings();
+
 }
 

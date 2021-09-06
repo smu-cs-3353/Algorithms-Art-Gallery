@@ -2,28 +2,23 @@
 // Created by Logan Schmitt on 9/6/21.
 //
 #include "Wall.hpp"
-#include <fstream>
 
-void Wall::createWall(ifstream &inFile) {
-    string rawLength;
-    string rawWidth;
-    getline(inFile, rawLength, ' ');
-    getline(inFile, rawWidth, '\n');
+Wall::Wall() {
 
-    int length = stoi(rawLength);
-    int width = stoi(rawWidth);
+}
 
-    setLength(length);
-    setWidth(width);
+Wall::Wall(int inWidth, int inHeight) {
+    setWidth(inWidth);
+    setHeight(inHeight);
 }
 
 void Wall::setWidth(int inWidth) {
     mWidth = inWidth;
 }
-void Wall::setLength(int inLength) {
-    mLength = inLength;
+void Wall::setHeight(int inHeight) {
+    mHeight = inHeight;
 }
 
 void Wall::printDimensions() {
-    cout << "length: " << mLength  << '\n' << "width: " << mWidth;
+    cout << "width: " << mWidth  << '\n' << "height: " << mHeight;
 }
