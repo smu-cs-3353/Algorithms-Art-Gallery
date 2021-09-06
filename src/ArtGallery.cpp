@@ -28,21 +28,24 @@ ArtGallery::ArtGallery(std::string inputFileName) {
         wall.setWidth(wallWidth);
 
         //reading in individual painting attributes
-        while (!inputFile.eof()) {
+        for(int i=0;i<numPaintings;i++) {
             int id, value, width, height;
             inputFile >> id;
-            inputFile>>value;
-            inputFile>>width;
-            inputFile>>height;
-            Painting painting(id,value,width,height);
+            inputFile >> value;
+            inputFile >> width;
+            inputFile >> height;
+            Painting painting(id, value, width, height);
             paintings.push_back(painting);
         }
-
     }
 }
 
 void ArtGallery::displayAllPaintings() {
-    for(Painting painting : paintings){
+    for (Painting painting: paintings) {
         painting.display();
     }
+}
+
+void ArtGallery::placePaintings() {
+    wall.addPaintings(paintings);
 }
