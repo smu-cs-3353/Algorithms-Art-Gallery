@@ -13,4 +13,5 @@ endforeach()
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(${EXE_NAME} src/main.cpp src/Wall.cpp src/Wall.hpp)
+add_executable(${EXE_NAME} src/main.cpp src/ArtGallery.cpp src/ArtGallery.h src/Painting.cpp src/Painting.h src/Wall.cpp src/Wall.hpp)
+

@@ -1,6 +1,6 @@
+#include "ArtGallery.h"
 #include <iostream>
-#include <fstream>
-#include "Wall.hpp"
+#include <string>
 
 using namespace std;
 
@@ -11,6 +11,3 @@ int main( int argc, char *argv[] ){
 
 }
 
-
-
-}
