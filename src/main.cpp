@@ -1,5 +1,10 @@
+#include "ArtGallery.h"
 #include <iostream>
+#include <string>
 
-int main() {
-    std::cout << "Fall 2021 CS 3353 PA 01." << std::endl;
+using namespace std;
+
+int main( int argc, char *argv[] ){
+    string inputFileName(argv[1]);
+    ArtGallery gallery(inputFileName);
 }
