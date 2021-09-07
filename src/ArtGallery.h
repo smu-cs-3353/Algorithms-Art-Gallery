@@ -20,6 +20,8 @@ public:
 
     void displayAllPaintings();
 
+    void expensiveFirst();
+
 };
 
 

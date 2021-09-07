@@ -2,6 +2,7 @@
 // Created by tallb on 9/6/2021.
 //
 
+#include <algorithm>
 #include "ArtGallery.h"
 
 ArtGallery::ArtGallery() {
@@ -45,4 +46,26 @@ void ArtGallery::displayAllPaintings() {
     for(Painting painting : paintings){
         painting.display();
     }
+}
+
+void ArtGallery::placePaintings() {
+    wall.addPaintings(paintings);
+}
+
+void ArtGallery::expensiveFirst() {
+    if (paintings.size() == 0) {
+        return;
+    }
+    vector<Painting> paintingsCopy = paintings;
+
+    sort(paintingsCopy.begin(), paintingsCopy.end(),[](Painting lhs, Painting& rhs) {
+        return lhs.getValue() > rhs.getValue();
+    });
+
+
+
+//    for(int i = 0; i < paintingsCopy.size(); ++i) {
+//        cout << paintingsCopy[i].getValue() << endl;
+//    }
+
 }
