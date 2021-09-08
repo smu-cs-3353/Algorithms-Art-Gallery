@@ -112,7 +112,6 @@ void ArtGallery::bruteForce() {
             greatestCostIndex = i;
         }
     }
-    std::cout << greatestCost << " " << greatestCostIndex << std::endl;
     wall.addPaintings(paintingPermutations[greatestCostIndex]);
     vector<Painting> wallPaintings = wall.getPaintings();
     writeToFile(wallPaintings, "bruteforce");
