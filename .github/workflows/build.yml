@@ -8,7 +8,7 @@ env:
   ###   Output Files will follow input files
   ###   Note: These should be the actual names of the files.  No double quotes
   INPUT_FILES: input01.txt
-  OUTPUT_FILES: input01-highvalue.txt input01-bruteforce.txt
+  OUTPUT_FILES: output/input01-highvalue.txt output/input01-bruteforce.txt
 
 ### DO NOT MODIFY ANYTHING BELOW THIS LINE!!!
 
