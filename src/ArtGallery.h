@@ -10,10 +10,13 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+
 class ArtGallery {
+
 private:
     std::vector<Painting> paintings;
     Wall wall;
+
 public:
     ArtGallery();
     ArtGallery(std::string);
@@ -22,6 +25,9 @@ public:
     void displayAllPaintings();
 
     void expensiveFirst();
+    void bruteForce();
+
+    void writeToFile(vector<Painting> inPaintings, ofstream &outFile);
 };
 
 

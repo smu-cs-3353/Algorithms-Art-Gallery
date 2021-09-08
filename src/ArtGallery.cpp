@@ -4,7 +4,7 @@
 
 #include <algorithm>
 #include "ArtGallery.h"
-
+#include "fstream"
 ArtGallery::ArtGallery() {
 
 }
@@ -41,17 +41,25 @@ ArtGallery::ArtGallery(std::string inputFileName) {
     }
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+
 void ArtGallery::displayAllPaintings() {
     for (Painting painting: paintings) {
         painting.display();
     }
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+
 void ArtGallery::placePaintings() {
-    wall.addPaintings(paintings);
+//    wall.addPaintings(paintings);
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+
 void ArtGallery::expensiveFirst() {
+    ofstream outFile("./output/output-highvalue.txt");
+
     if (paintings.size() == 0) {
         return;
     }
@@ -64,9 +72,38 @@ void ArtGallery::expensiveFirst() {
     for(int i = 0; i < sortedPaintings.size(); ++i) {
         cout << "id: " << sortedPaintings[i].getID() << " : " << "value: " << sortedPaintings[i].getValue() << endl;
     }
-    
-    wall.addPaintings(sortedPaintings);
 
+    wall.addPaintings(sortedPaintings);
+    vector<Painting> wallPaintings = wall.getPaintings();
+    writeToFile(wallPaintings, outFile);
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+
+void ArtGallery::bruteForce() {
+    if (paintings.size() == 0) {
+        cout << "No paintings found." << endl;
+        return;
+    } else if (paintings.size() > 10) {
+        cout << "data set size exceeds maximum" << endl;
+        return;
+    }
+//TODO: BruteForce implementation
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+
+void ArtGallery::writeToFile(vector<Painting> inPaintings, ofstream &outFile) {
+    outFile << wall.getTotalValue() << endl;
+    for(int i = 0; i < inPaintings.size(); ++i) {
+        Painting currPainting = inPaintings[i];
+        outFile << currPainting.getID() << " "
+                << currPainting.getValue() << " "
+                << currPainting.getWidth() << " "
+                << currPainting.getHeight() << " "
+                << currPainting.getX() << " "
+                << currPainting.getY() << " "
+                << endl;
+    }
+}
 

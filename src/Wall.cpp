@@ -4,8 +4,10 @@
 #include "Wall.hpp"
 
 Wall::Wall() {
-
+    totalValue = 0;
 }
+
+//----------------------------------------------------------------------------------------------------------------------
 
 Wall::Wall(int inWidth, int inHeight) {
     setWidth(inWidth);
@@ -13,17 +15,25 @@ Wall::Wall(int inWidth, int inHeight) {
     totalValue = 0;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+
 void Wall::setWidth(int inWidth) {
     mWidth = inWidth;
 }
+
+//----------------------------------------------------------------------------------------------------------------------
 
 void Wall::setHeight(int inHeight) {
     mHeight = inHeight;
 }
 
+//----------------------------------------------------------------------------------------------------------------------
+
 void Wall::printDimensions() {
     cout << "width: " << mWidth << '\n' << "height: " << mHeight;
 }
+
+//----------------------------------------------------------------------------------------------------------------------
 
 void Wall::placePainting(Painting painting, int x, int y) {
     painting.setX(x);
@@ -31,6 +41,8 @@ void Wall::placePainting(Painting painting, int x, int y) {
     paintings.push_back(painting);
     totalValue+=painting.getValue();
 }
+
+//----------------------------------------------------------------------------------------------------------------------
 
 void Wall::addPaintings(vector <Painting> paintingsToAdd) {
     int currX = 0;
