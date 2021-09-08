@@ -21,6 +21,7 @@ public:
     void placePaintings();
     void displayAllPaintings();
 
+    void expensiveFirst();
 };
 
 
