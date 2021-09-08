@@ -36,7 +36,8 @@ void Wall::addPaintings(vector <Painting> paintingsToAdd) {
     int currX = 0;
     int currY = 0;
     int rowHeight = 0;
-    for (int i = 0; i < paintingsToAdd.size(); i++) {
+    int vectorSize = paintingsToAdd.size();
+    for (int i = 0; i < vectorSize; i++) {
         //set the current painting
         Painting currPainting = paintingsToAdd[i];
         //if the painting fits in the current location, place the painting
