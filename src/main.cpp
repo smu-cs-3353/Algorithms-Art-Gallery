@@ -9,7 +9,7 @@ int main( int argc, char *argv[] ){
     ArtGallery gallery(inputFileName);
     gallery.expensiveFirst();
     gallery.bruteForce();
-//    gallery.placePaintings();
-
+    gallery.costPerPixel();
+    gallery.smallestHeight();
 }
 

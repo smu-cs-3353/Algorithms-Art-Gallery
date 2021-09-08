@@ -30,6 +30,10 @@ public:
 
     void bruteForce();
 
+    void costPerPixel();
+
+    void smallestHeight();
+
     void writeToFile(vector<Painting> inPaintings, std::string outputName);
 };
 
