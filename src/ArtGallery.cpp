@@ -78,10 +78,6 @@ void ArtGallery::costPerPixel() {
     sort(sortedPaintings.begin(), sortedPaintings.end(), [](Painting lhs, Painting &rhs) {
         return ((double)lhs.getValue()/(lhs.getWidth()*lhs.getHeight())) > ((double)rhs.getValue()/(rhs.getWidth()*rhs.getHeight()));
     });
-    for(int i=0;i<paintings.size();i++){
-        std::cout<<paintings[i].getID()<<" "
-        <<((double)paintings[i].getValue()/(paintings[i].getWidth()*paintings[i].getHeight()))<<std::endl;
-    }
     wall.addPaintings(sortedPaintings);
     vector<Painting> wallPaintings = wall.getPaintings();
     writeToFile(wallPaintings, "custom");
