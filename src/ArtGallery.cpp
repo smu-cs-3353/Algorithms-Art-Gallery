@@ -69,6 +69,25 @@ void ArtGallery::expensiveFirst() {
 
 //----------------------------------------------------------------------------------------------------------------------
 
+void ArtGallery::costPerPixel() {
+    if (paintings.size() == 0) {
+        return;
+    }
+    vector<Painting> sortedPaintings = paintings;
+
+    sort(sortedPaintings.begin(), sortedPaintings.end(), [](Painting lhs, Painting &rhs) {
+        return ((double)lhs.getValue()/(lhs.getWidth()*lhs.getHeight())) > ((double)rhs.getValue()/(rhs.getWidth()*rhs.getHeight()));
+    });
+    for(int i=0;i<paintings.size();i++){
+        std::cout<<paintings[i].getID()<<" "
+        <<((double)paintings[i].getValue()/(paintings[i].getWidth()*paintings[i].getHeight()))<<std::endl;
+    }
+    wall.addPaintings(sortedPaintings);
+    vector<Painting> wallPaintings = wall.getPaintings();
+    writeToFile(wallPaintings, "custom");
+}
+//----------------------------------------------------------------------------------------------------------------------
+
 void ArtGallery::bruteForce() {
     if (paintings.size() == 0) {
         cout << "No paintings found." << endl;
@@ -98,6 +117,23 @@ void ArtGallery::bruteForce() {
     vector<Painting> wallPaintings = wall.getPaintings();
     writeToFile(wallPaintings, "bruteforce");
 //TODO: BruteForce implementation
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+
+void ArtGallery::smallestHeight() {
+    if (paintings.size() == 0) {
+        return;
+    }
+    vector<Painting> sortedPaintings = paintings;
+
+    sort(sortedPaintings.begin(), sortedPaintings.end(), [](Painting lhs, Painting &rhs) {
+        return lhs.getHeight() < rhs.getHeight();
+    });
+
+    wall.addPaintings(sortedPaintings);
+    vector<Painting> wallPaintings = wall.getPaintings();
+    writeToFile(wallPaintings, "smallheight");
 }
 
 //----------------------------------------------------------------------------------------------------------------------
