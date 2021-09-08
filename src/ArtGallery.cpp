@@ -97,7 +97,6 @@ void ArtGallery::bruteForce() {
     wall.addPaintings(paintingPermutations[greatestCostIndex]);
     vector<Painting> wallPaintings = wall.getPaintings();
     writeToFile(wallPaintings, "bruteforce");
-//TODO: BruteForce implementation
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -106,7 +105,8 @@ void ArtGallery::writeToFile(vector<Painting> inPaintings, std::string outputNam
     bool debugOutputFile = false;
     //remove the last 4 letters because we assume ith input ends with .txt
     std::string fileEndingRemoved = inputFileName.substr(0, inputFileName.length() - 4);
-    std::string fullFileName = "../output/" + fileEndingRemoved + "-" + outputName + ".txt";
+    std::string fullFileName = fileEndingRemoved + "-" + outputName + ".txt";
+    //std::string fullFileName = "../output/" + fileEndingRemoved + "-" + outputName + ".txt";
     ofstream outFile(fullFileName);
     if (debugOutputFile && outFile.is_open()) {
         std::cout << fullFileName << " open." << std::endl;
