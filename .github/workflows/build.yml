@@ -59,7 +59,7 @@ jobs:
         shell: bash
         run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES
         
-        - name: List contents of build directory
+      - name: List contents of build directory
         run: ls -al ${{runner.workspace}}/build
         
       - name: Copy output files to artifact directory
