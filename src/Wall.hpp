@@ -9,7 +9,9 @@ using namespace std;
 #include "Painting.h"
 #include <iostream>
 #include <vector>
+
 class Wall {
+
 private:
     int mWidth;
     int mHeight;
@@ -30,7 +32,9 @@ public:
     int getWidth() { return mWidth; }
     int getHeight() { return mHeight; }
 
+    int getTotalValue() { return totalValue; }
 
+    vector<Painting> getPaintings() { return paintings; }
 };
 
 
