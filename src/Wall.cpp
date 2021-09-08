@@ -55,6 +55,9 @@ void Wall::addPaintings(vector<Painting> paintingsToAdd) {
     for (int i = 0; i < vectorSize; i++) {
         //set the current painting
         Painting currPainting = paintingsToAdd[i];
+        if(currPainting.getWidth()>mWidth||currPainting.getHeight()>mHeight){
+            continue;
+        }
         if (debugPlacement) {
             std::cout << "Attempting to place painting #" << currPainting.getID() << " at ("
                       << currX << ", " << currY << ")" << std::endl;
