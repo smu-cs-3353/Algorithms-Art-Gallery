@@ -99,9 +99,13 @@ void Painting::setY(int p_y) {
 //----------------------------------------------------------------------------------------------------------------------
 
 void Painting::display() {
-    std::cout<<"Painting id #"<<id<<":"<<std::endl;
-    std::cout<<"\tValue: $"<<value<<std::endl;
-    std::cout<<"\tDimensions: "<<width<<"x"<<height<<std::endl;
-    std::cout<<"\tLocation: ("<<x<<", "<<y<<")"<<std::endl;
+    std::cout << "Painting id #" << id << ":" << std::endl;
+    std::cout << "\tValue: $" << value << std::endl;
+    std::cout << "\tDimensions: " << width << "x" << height << std::endl;
+    std::cout << "\tLocation: (" << x << ", " << y << ")" << std::endl;
+}
+
+bool Painting::operator<(const Painting &painting) const {
+    return id < painting.id;
 }
 

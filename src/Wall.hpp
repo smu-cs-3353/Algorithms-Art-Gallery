@@ -23,8 +23,9 @@ public:
     Wall(int inWidth, int inHeight);
 
     void printDimensions();
-    void placePainting(Painting, int, int);
+    void placePainting(Painting&, int, int);
     void addPaintings(vector<Painting>);
+    void clearWall();
 
     void setWidth(int inWidth);
     void setHeight(int inHeight);

@@ -4,6 +4,7 @@
 
 #ifndef INC_21F_PA01_MILLER_AND_SCHMITT_ARTGALLERY_H
 #define INC_21F_PA01_MILLER_AND_SCHMITT_ARTGALLERY_H
+
 #include "Painting.h"
 #include "Wall.hpp"
 #include <vector>
@@ -14,20 +15,22 @@
 class ArtGallery {
 
 private:
+    std::string inputFileName;
     std::vector<Painting> paintings;
     Wall wall;
 
 public:
     ArtGallery();
+
     ArtGallery(std::string);
 
-    void placePaintings();
     void displayAllPaintings();
 
     void expensiveFirst();
+
     void bruteForce();
 
-    void writeToFile(vector<Painting> inPaintings, ofstream &outFile);
+    void writeToFile(vector<Painting> inPaintings, std::string outputName);
 };
 
 
