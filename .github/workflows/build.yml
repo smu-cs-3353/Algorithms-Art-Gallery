@@ -8,7 +8,7 @@ env:
   ###   Output Files will follow input files
   ###   Note: These should be the actual names of the files.  No double quotes
   INPUT_FILES: input01.txt
-  OUTPUT_FILES: input01-highvalue.txt input01-bruteforce.txt
+  OUTPUT_FILES: input01-highvalue.txt input01-bruteforce.txt input01-custom.txt
 
 ### DO NOT MODIFY ANYTHING BELOW THIS LINE!!!
 
@@ -58,9 +58,6 @@ jobs:
         working-directory: ${{runner.workspace}}/build
         shell: bash
         run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES
-        
-      - name: List contents of build directory
-        run: ls -al ${{runner.workspace}}/build
         
       - name: Copy output files to artifact directory
         working-directory: ${{runner.workspace}}/build

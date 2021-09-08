@@ -132,7 +132,7 @@ void ArtGallery::smallestHeight() {
 
     wall.addPaintings(sortedPaintings);
     vector<Painting> wallPaintings = wall.getPaintings();
-    writeToFile(wallPaintings, "smallheight");
+    writeToFile(wallPaintings, "custom");
 }
 
 //----------------------------------------------------------------------------------------------------------------------
