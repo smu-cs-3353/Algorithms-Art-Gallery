@@ -7,34 +7,20 @@ Wall::Wall() {
     totalValue = 0;
 }
 
-//----------------------------------------------------------------------------------------------------------------------
-
 Wall::Wall(int inWidth, int inHeight) {
     setWidth(inWidth);
     setHeight(inHeight);
     totalValue = 0;
 }
 
-//----------------------------------------------------------------------------------------------------------------------
-
-void Wall::setWidth(int inWidth) {
-    mWidth = inWidth;
-}
-
-//----------------------------------------------------------------------------------------------------------------------
-
-void Wall::setHeight(int inHeight) {
-    mHeight = inHeight;
-}
-
-//----------------------------------------------------------------------------------------------------------------------
-
-void Wall::printDimensions() {
-    cout << "width: " << mWidth << '\n' << "height: " << mHeight;
-}
-
-//----------------------------------------------------------------------------------------------------------------------
-
+/***********************************************************************************************************************
+ *
+ * @param painting
+ * @param x
+ * @param y
+ * @description
+ * Adds the painting to the wall at the specified (x,y) and it updates the total price of the wall.
+ */
 void Wall::placePainting(Painting &painting, int x, int y) {
     painting.setX(x);
     painting.setY(y);
@@ -42,11 +28,25 @@ void Wall::placePainting(Painting &painting, int x, int y) {
     totalValue += painting.getValue();
 }
 
-//----------------------------------------------------------------------------------------------------------------------
 
+/***********************************************************************************************************************
+ *
+ * @param paintingsToAdd
+ * @description
+ *  This algorithm uses placement on "shelves". It takes a vector of paintings representing all the paintings that can
+ *  be placed, and it places the items on the wall by adding them to vector in a Wall object.\n
+ *  The Algorithm works like this:\n
+ *  1. Select the next unplaced painting from the vector; make its dimensions are less than the walls dimensions.\n
+ *  2. If the painting fits in the current position (starting at 0,0), place the painting and move the current position
+ *     to the right of the placed painting (x = x + paintingWidth). If the painting is taller than any painting in the
+ *     row, then we set the new row height.\n
+ *  3. If the painting is too wide to fit on the shelf, then we start a new row and attempt to place it on that new row.\n
+ *  4. If the painting is too tall to fit, then we discard it and restart the loop.\n
+ *
+ */
 void Wall::addPaintings(vector<Painting> paintingsToAdd) {
     clearWall();
-    //debugPlacement shows step by step what the algorithm is doing
+    //debugPlacement shows step by step what the algorithm is doing when set to true
     bool debugPlacement = false;
     int currX = 0;
     int currY = 0;
@@ -103,8 +103,25 @@ void Wall::addPaintings(vector<Painting> paintingsToAdd) {
         }
     }
 }
-
+/***********************************************************************************************************************
+ *
+ * @description:
+ * Removes all paintings from the wall and resets the value of the wall
+ *
+ */
 void Wall::clearWall() {
     paintings.clear();
     totalValue = 0;
+}
+
+void Wall::setWidth(int inWidth) {
+    mWidth = inWidth;
+}
+
+void Wall::setHeight(int inHeight) {
+    mHeight = inHeight;
+}
+
+void Wall::printDimensions() {
+    cout << "width: " << mWidth << '\n' << "height: " << mHeight;
 }

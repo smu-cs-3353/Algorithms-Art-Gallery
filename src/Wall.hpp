@@ -22,20 +22,18 @@ public:
     Wall();
     Wall(int inWidth, int inHeight);
 
-    void printDimensions();
     void placePainting(Painting&, int, int);
     void addPaintings(vector<Painting>);
     void clearWall();
-
-    void setWidth(int inWidth);
-    void setHeight(int inHeight);
+    void printDimensions();
 
     int getWidth() { return mWidth; }
     int getHeight() { return mHeight; }
-
     int getTotalValue() { return totalValue; }
-
     vector<Painting> getPaintings() { return paintings; }
+
+    void setWidth(int inWidth);
+    void setHeight(int inHeight);
 };
 
 

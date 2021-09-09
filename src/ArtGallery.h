@@ -11,6 +11,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <algorithm>
 
 class ArtGallery {
 
@@ -21,20 +22,15 @@ private:
 
 public:
     ArtGallery();
-
     ArtGallery(std::string);
 
-    void displayAllPaintings();
-
     void expensiveFirst();
-
     void bruteForce();
-
     void costPerPixel();
-
     void smallestHeight();
 
     void writeToFile(vector<Painting> inPaintings, std::string outputName);
+    void displayAllPaintings();
 };
 
 

@@ -20,31 +20,20 @@ private:
 
 public:
     Painting();
-
     Painting(int id, int value, int width, int height);
 
-    int getID();
-
-    int getValue();
-
-    int getWidth();
-
-    int getHeight();
-
-    int getX();
-
-    int getY();
+    int getID() { return id; }
+    int getValue(){ return value; }
+    int getWidth(){ return width; }
+    int getHeight(){ return height; }
+    int getX(){ return x; }
+    int getY(){ return y; }
 
     void setID(int);
-
     void setValue(int);
-
     void setWidth(int);
-
     void setHeight(int);
-
     void setX(int);
-
     void setY(int);
 
     void display();
