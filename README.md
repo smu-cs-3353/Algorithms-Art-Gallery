@@ -29,12 +29,12 @@ The formatting of the input file is as follows:
 
 Sample Input:
 
-**1024 768   
+**1024 768  
 4  
 12 300 1023 767  
 9 200 300 100  
 23 250 800 700  
-1 100 100 100**
+1 100 100 100**  
 ---
 The output of the program will be in the form of 3 text files. The prefixes "-highvalue.txt", "bruteforce.txt", and "custom.txt" will be appended on the end of a newly generated file depending on the algorithm that was used to place paintings.  
 
