@@ -41,6 +41,8 @@ ArtGallery::ArtGallery(std::string p_inputFileName) {
             Painting painting(id, value, width, height);
             paintings.push_back(painting);
         }
+    } else {
+        cout << "Input File not opened. Make sure the input file exists and is in the form of 'input01.txt'" << endl;
     }
 }
 
