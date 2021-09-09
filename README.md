@@ -10,7 +10,7 @@ In this program, we are working for a consulting firm that has been hired by a c
 ## Implementation:
 In this program, there are three algorithms for determining which painting will be on the wall. 
 1. The Brute Force Approach - This algorithm will be used for paintings under our 10 painting limit. The objective of this algorithm is to find the maximum value of a subset of pictures on the wall through a 'brute-force' approach.
-2. The Most Expenisve First - In this algorithm, we sort the pictures in decreasing order by value, add them to the wall in order, and skip any that will not fit.
+2. The Most Expensive First - In this algorithm, we sort the pictures in decreasing order by value, add them to the wall in order, and skip any that will not fit.
 3. The Custom - The algorithm we implemented will place the painting based on the cost per unit of the painting. This algorithm takes the value of the painting and divides it by the paintings total area to then sort the paintings based on greatest cost per unit.
 
 ## Build and Run:
@@ -35,10 +35,12 @@ Sample Input:
 9 200 300 100  
 23 250 800 700  
 1 100 100 100**  
----
+
+
+
 The output of the program will be in the form of 3 text files. The prefixes "-highvalue.txt", "bruteforce.txt", and "custom.txt" will be appended on the end of a newly generated file depending on the algorithm that was used to place paintings.  
 
-The format of the ouput file is as follows:  
+The format of the output file is as follows:  
 * The first line should contain a single integer representing the cumulative value of all pieces of art placed on the wall for this particular algo. 
 * Each additional line represents a picture and should consist of 6 integers, each separated by a space 
   * first integer is the picture id 
