@@ -13,8 +13,8 @@ The shelving algorithm used works like this:
 1. Select the next unplaced painting from the set of paintings; make sure its dimensions are less than the walls dimensions.
 2. If the painting fits in the current position (starting at 0,0), place the painting and move the current position to the right of the placed painting (x = x + paintingWidth). If the placed painting is taller than any painting in the row, then we make its height the row height. Restart the loop.
 3. If the painting is too wide to fit on the shelf, then we start a new row and attempt to place it on that new row.
-4. If the painting is too tall to fit on any new shelf, then we discard it and restart the loop.\n
-It is called the shelving algorithm because it places each painting in rows, almost like a shelf. The order in which objects are placed into these shelves is also based on three different algorithms: 
+4. If the painting is too tall to fit on any new shelf, then we discard it and restart the loop.
+#It is called the shelving algorithm because it places each painting in rows, almost like a shelf. The order in which objects are placed into these shelves is also based on three different algorithms: 
 * The Brute Force Approach - This algorithm will be used for paintings under our 10 painting limit. This algorthm finds every permutation of the list of paintings, and attempts to add them using the shelving algorithm. Whichever permutation results in the greatest value is saved.
 * The Most Expensive First - In this algorithm, we sort the pictures in decreasing order by value, and add them to the wall in order, skipping any that will not fit.
 * The Custom - Our custom algorithm places the paintings based on the cost per pixel (or unit) of the painting. This algorithm sorts the paintings based on the value of each painting divided by each painting's total area.
